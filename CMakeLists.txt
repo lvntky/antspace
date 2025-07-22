@@ -45,6 +45,7 @@ endif()
 
 set(SOURCES
     src/main.cpp
+    src/Ant.cpp
     # Add additional source files here
 )
 
