@@ -2,16 +2,19 @@
 #define SDLHANDLER_HPP_
 
 #include <SDL2/SDL.h>
+#include <World.hpp>
+#include <data/Ant.hpp>
+#include <vector>
 
 class SDLHandler {
     public:
-        SDLHandler(int screenWidth, int screenHeight, int gridWidth, int gridHeight);
+       SDLHandler(int screenWidth, int screenHeight, int gridWidth, int gridHeight);
     ~SDLHandler();
 
     bool init();
     void clear();
     void drawWorld(const World& world);
-    void drawAnts(const std::vector<AntAgent>& ants);
+    void drawAnts(const std::vector<Ant>& ants);
     void present();
     void handleEvents(bool& running);
 

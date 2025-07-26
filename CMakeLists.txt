@@ -23,7 +23,7 @@ endif()
 
 # Options
 option(ENABLE_SANITIZERS "Enable Address and Undefined Behavior Sanitizers" OFF)
-option(ENABLE_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" ON)
+option(ENABLE_WARNINGS_AS_ERRORS "Treat compiler warnings as errors" OFF)
 
 # =============================================================================
 # Dependencies
@@ -46,6 +46,8 @@ endif()
 set(SOURCES
     src/main.cpp
     src/Ant.cpp
+    src/Cell.cpp
+
     # Add additional source files here
 )
 

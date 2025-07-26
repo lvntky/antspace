@@ -11,7 +11,8 @@ class World{
         std::vector<Cell> cells;
 
         int index(int x, int y) const;
-
+    public:
+        
         World(int width, int height);
 
     Cell& getCell(int x, int y);
@@ -23,4 +24,4 @@ class World{
     void reset();
 };
 
-#define //WORLD_HPP_
+#endif //WORLD_HPP_
