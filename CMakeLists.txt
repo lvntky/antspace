@@ -44,10 +44,9 @@ endif()
 # =============================================================================
 
 set(SOURCES
-    src/main.cpp
-    src/Ant.cpp
-    src/Cell.cpp
-
+  src/main.cpp
+  src/SDLHandler.cpp
+  src/SimulationEngine.cpp
     # Add additional source files here
 )
 

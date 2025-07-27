@@ -1,21 +1,25 @@
 #ifndef SIMULATION_ENGINE_HPP_
 #define SIMULATION_ENGINE_HPP_
 
+#include <SDLHandler.hpp>
+#include <data/Cell.hpp>
+#include <vector>
+
 class SimulationEngine {
-    private:
-        int worldWidth;
-        int worldHeight;
-        int numAnts;
-        bool running = false;
+public:
+    SimulationEngine(int width, int height, int cellSize);
+    void run();
 
-        void mainLoop();
+private:
+    int cols, rows;
+    int cellSize;
+    SDLHandler sdl;
 
-    public:
-        void run();
-        void stop();
-        bool isRunning();
-        SimulationEngine(int width, int height, int numAnts);
-        
+    std::vector<std::vector<Cell>> grid;
+
+    void handleEvents(bool& running);
+    void update();
+    void render();
 };
 
-#endif //SIMULATION_ENGINE_HPP_
+#endif

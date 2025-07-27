@@ -1,38 +1,28 @@
-#ifndef SDLHANDLER_HPP_
-#define SDLHANDLER_HPP_
+#ifndef SDL_HANDLER_HPP_
+#define SDL_HANDLER_HPP_
 
 #include <SDL2/SDL.h>
-#include <World.hpp>
-#include <data/Ant.hpp>
 #include <vector>
 
 class SDLHandler {
-    public:
-       SDLHandler(int screenWidth, int screenHeight, int gridWidth, int gridHeight);
+public:
+    SDLHandler(int width, int height, int cellSize);
     ~SDLHandler();
 
     bool init();
     void clear();
-    void drawWorld(const World& world);
-    void drawAnts(const std::vector<Ant>& ants);
+    void drawGrid();
+    void drawCell(int x, int y, SDL_Color color);
     void present();
-    void handleEvents(bool& running);
+    void handleEvents(bool &running);
 
 private:
-    SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
+    int width;
+    int height;
+    int cellSize;
 
-    int screenWidth;
-    int screenHeight;
-    int gridWidth;
-    int gridHeight;
-
-    int cellWidth;
-    int cellHeight;
-
-    void drawCell(int x, int y, float pheromoneLevel, float foodAmount);
-    void drawAnt(int x, int y);
+    SDL_Window* window;
+    SDL_Renderer* renderer;
 };
 
-#endif //SDLHANDLER_HPP_
-
+#endif // SDL_HANDLER_HPP_
